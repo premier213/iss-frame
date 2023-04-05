@@ -1,0 +1,150 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": [
+        "plugin:promise/recommended",
+        "plugin:prettier/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:react/jsx-runtime"
+      ],
+      "plugins": ["prettier", "jsx-a11y", "promise", "simple-import-sort", "react-hooks", "react", "unused-imports"],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      },
+      "settings": {
+        "typescript": true,
+        "node": true
+      },
+      "rules": {
+        // react
+        "react/prop-types": "off",
+        // unused-import
+        "unused-imports/no-unused-imports": "warn",
+        //sort import
+        "simple-import-sort/imports": "warn",
+        "simple-import-sort/exports": "warn",
+        // "@nrwl/nx/enforce-module-boundaries": [
+        //   "error",
+        //   {
+        //     "enforceBuildableLibDependency": true,
+        //     "allow": [],
+        //     "depConstraints": [
+        //       {
+        //         "sourceTag": "*",
+        //         "onlyDependOnLibsWithTags": ["*"]
+        //       }
+        //     ]
+        //   }
+        // ],
+        // prettier
+        "prettier/prettier": ["error", { "singleQuote": false, "endOfLine": "auto" }],
+        // a11y
+        "jsx-a11y/autocomplete-valid": [
+          2,
+          {
+            "inputComponents": ["Input", "FormField"]
+          }
+        ],
+        "jsx-a11y/anchor-has-content": [
+          2,
+          {
+            "components": ["Anchor"]
+          }
+        ],
+        "jsx-a11y/alt-text": "error",
+        "jsx-a11y/anchor-is-valid": [
+          "error",
+          {
+            "components": ["Link"],
+            "specialLink": ["hrefLeft", "hrefRight"],
+            "aspects": ["invalidHref", "preferButton"]
+          }
+        ],
+        "jsx-a11y/control-has-associated-label": [
+          2,
+          {
+            "labelAttributes": ["label"],
+            "controlComponents": ["CustomComponent"],
+            "ignoreElements": ["audio", "canvas", "embed", "input", "textarea", "tr", "video"],
+            "ignoreRoles": [
+              "grid",
+              "listbox",
+              "menu",
+              "menubar",
+              "radiogroup",
+              "row",
+              "tablist",
+              "toolbar",
+              "tree",
+              "treegrid"
+            ],
+            "depth": 3
+          }
+        ],
+        // eslint
+        "no-extra-boolean-cast": ["off"],
+        "arrow-body-style": ["error", "as-needed"],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
+        "no-param-reassign": "off",
+        "no-console": "warn",
+        "@typescript-eslint/no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
+        "padding-line-between-statements": [
+          "warn",
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": ["return"]
+          },
+          {
+            "blankLine": "always",
+            "prev": ["import"],
+            "next": ["export"]
+          },
+          {
+            "blankLine": "never",
+            "prev": ["const", "let", "var", "function"],
+            "next": ["const", "let", "var"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript", "plugin:import/typescript"],
+      "plugins": ["import"],
+      "settings": {
+        "typescript": true,
+        "node": true,
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+          "typescript": {
+            "project": ["tsconfig.base.json"]
+          },
+          "node": {
+            "project": ["tsconfig.base.json"]
+          }
+        }
+      },
+      "rules": {
+        "import/no-unresolved": "error"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}

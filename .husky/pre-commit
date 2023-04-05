@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🛠 formating..."
+npx nx format:write
+echo "✅ format done."
+echo "🛠 linting..."
+npx nx run-many --all --target=lint --fix
+echo "🛠 check typescript types ..."
+npx nx run-many --all --target=type-check
+echo "✅ types checked."
+git add -u
