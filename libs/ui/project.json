@@ -41,6 +41,20 @@
           "mode": "production"
         }
       }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p libs/ui/tsconfig.lib.json --noEmit", "tsc -p libs/ui/tsconfig.spec.json --noEmit"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "baseBranch": "dev",
+        "preset": "conventional",
+        "tagPrefix": "${projectName}@"
+      }
     }
   }
 }

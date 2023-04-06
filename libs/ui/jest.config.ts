@@ -1,11 +1,17 @@
 /* eslint-disable */
 export default {
-  displayName: 'ui',
-  preset: '../../jest.preset.js',
+  displayName: "input",
+  moduleFileExtensions: ["js", "ts", "tsx"],
   transform: {
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
-    '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/react/babel'] }],
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest",
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/ui',
+  preset: "../../jest.preset.js",
+  globals: {
+    "ts-jest": {
+      tsconfig: "<rootDir>/tsconfig.spec.json",
+    },
+  },
+  coverageDirectory: "../../coverage/packages/input",
+  setupFilesAfterEnv: ["./jest.setup.ts"],
 };
