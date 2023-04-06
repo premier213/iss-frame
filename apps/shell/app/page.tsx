@@ -1,3 +1,5 @@
-export const Page = () => <div>45454</div>;
+function Page() {
+  return <div>hello!!!</div>;
+}
 
 export default Page;

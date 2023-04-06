@@ -63,6 +63,20 @@
       "options": {
         "lintFilePatterns": ["apps/shell/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p apps/shell/tsconfig.json --noEmit"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "baseBranch": "dev",
+        "preset": "conventional",
+        "tagPrefix": "${projectName}@"
+      }
     }
   },
   "tags": []
