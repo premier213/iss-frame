@@ -81,7 +81,7 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "baseBranch": "dev",
+        "baseBranch": "main",
         "preset": "conventional",
         "tagPrefix": "${projectName}@"
       }
