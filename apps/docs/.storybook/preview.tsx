@@ -1,9 +1,9 @@
 import "@storybook/addon-console";
 
+import { theme } from "@frame/ui";
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { useDarkMode } from "storybook-dark-mode";
 
-import { theme } from "../../../libs/ui/src/config/theme";
 function ThemeWrapper(props: { children: React.ReactNode }) {
   const colorScheme = useDarkMode() ? "dark" : "light";
 

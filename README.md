@@ -36,21 +36,17 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
     "executor": "nx:run-commands",
     "options": {
       "commands": [
-        "tsc -p packages/<project-name>/tsconfig.lib.json --noEmit",
-        "tsc -p packages/<project-name>/tsconfig.spec.json --noEmit"
+        "tsc -p libs/<project-name>/tsconfig.lib.json --noEmit",
+        "tsc -p libs/<project-name>/tsconfig.spec.json --noEmit"
       ]
     }
   },
   ```
 
-- To setup jest in the package need to add the below code to `jest.config.js`
   ```
-  moduleFileExtensions: ["js", "ts", "tsx"],
-  transform: {
-    "^.+\\.(ts|tsx)?$": "ts-jest",
-    "^.+\\.(js|jsx)$": "babel-jest",
-  },
+
   ```
+
 - To implement a semantic version for the new package should be added version to the `project.json` file
   ```
   "version": {
@@ -117,6 +113,5 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Destroy project
 
 - destory project in nx framework `nx generate remove <project-name>`
-
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.

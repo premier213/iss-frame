@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@frame/store": ["libs/store/src/index.ts"],
       "@frame/ui": ["libs/ui/src/index.ts"]
     }
   },

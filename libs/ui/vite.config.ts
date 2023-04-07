@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import react from "@vitejs/plugin-react";
 import { join } from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
@@ -13,7 +14,7 @@ export default defineConfig({
       tsConfigFilePath: join(__dirname, "tsconfig.lib.json"),
       skipDiagnostics: true,
     }),
-
+    react(),
     viteTsConfigPaths({
       root: "../../",
     }),
@@ -42,7 +43,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [],
+      external: ["react", "react-dom", "react/jsx-runtime"],
     },
   },
 });

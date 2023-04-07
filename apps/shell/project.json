@@ -19,7 +19,7 @@
         "production": {}
       }
     },
-    "dev": {
+    "serve": {
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
