@@ -1,3 +1,7 @@
+import "./environment";
+
+export const base_url_client = process.env.REACT_APP_API_BASE_URL;
+export const base_url_server = process.env.API_BASE_URL;
 // Your tokens
 const accessToken = "1";
 const refreshToken = "your_refresh_token_here";

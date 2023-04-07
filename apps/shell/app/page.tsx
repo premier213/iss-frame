@@ -1,13 +1,8 @@
 import { makeRequest } from "@frame/store";
 
 async function getData() {
-  const res = await makeRequest("http://localhost:4000/posts", { cache: "force-cache" });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  // Recommendation: handle errors
+  const res = await makeRequest(process.env.API_BASE_URL, { cache: "force-cache" });
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
@@ -16,6 +11,7 @@ async function getData() {
 
 export default async function Page() {
   const data = await getData();
+  console.log("🎯 #20-apps/shell/app/page.tsx", process.env.API_BASE_URL);
 
-  return <div>{data[0].author} 1</div>;
+  return <div>{data[0].title}</div>;
 }

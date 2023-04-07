@@ -22,6 +22,8 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
     />
   ));
 
+  console.log("🎯 #19-apps/shell/app/page.tsx", process.env.NODE_ENV === "development" ? "dev" : "prod");
+
   return (
     <CacheProvider value={cache}>
       <MantineProvider

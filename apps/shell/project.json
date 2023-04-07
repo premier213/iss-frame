@@ -29,11 +29,18 @@
       "configurations": {
         "development": {
           "buildTarget": "shell:build:development",
-          "dev": true
+          "dev": true,
+          "envFile": ".env.development"
         },
         "production": {
           "buildTarget": "shell:build:production",
-          "dev": false
+          "dev": false,
+          "envFile": ".env.production"
+        },
+        "stage": {
+          "buildTarget": "shell:build:stage",
+          "dev": false,
+          "envFile": ".env.stage"
         }
       }
     },
@@ -48,7 +55,8 @@
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/shell/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "coverageDirectory": "coverage/apps/shell"
       },
       "configurations": {
         "ci": {
