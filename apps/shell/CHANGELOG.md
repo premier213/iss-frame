@@ -8,6 +8,12 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 - tests & typ-echeck cache c71d281
 
+## [0.1.1](///compare/shell@0.1.0...shell@0.1.1) (2023-04-07)
+
+### Bug Fixes
+
+- tests & typ-echeck cache c71d281
+
 ## [0.1.0](///compare/shell@0.0.1...shell@0.1.0) (2023-04-07)
 
 ### Features
