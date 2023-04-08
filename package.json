@@ -4,7 +4,10 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && npx nx run-many --target=serve"
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && nx serve shell",
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && nx serve shell --prod",
+    "build:stage": "export NODE_OPTIONS=--openssl-legacy-provider && nx build:stage shell --skip-nx-cache",
+    "build:prod": "export NODE_OPTIONS=--openssl-legacy-provider && nx build:prod shell --skip-nx-cache"
   },
   "private": true,
   "dependencies": {
@@ -73,7 +76,6 @@
     "babel-jest": "^29.4.1",
     "babel-loader": "9.1.2",
     "cypress": "^12.2.0",
-    "dotenv": "^16.0.3",
     "eslint": "~8.37.0",
     "eslint-config-next": "13.3.0",
     "eslint-config-prettier": "8.8.0",

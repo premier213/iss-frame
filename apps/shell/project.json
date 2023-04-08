@@ -10,7 +10,7 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "apps/shell",
-        "outputPath": "dist/apps/shell"
+        "outputPath": "dist/shell"
       },
       "configurations": {
         "development": {
@@ -19,6 +19,7 @@
         "production": {}
       }
     },
+
     "serve": {
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
@@ -29,19 +30,28 @@
       "configurations": {
         "development": {
           "buildTarget": "shell:build:development",
-          "dev": true,
-          "envFile": ".env.development"
+          "dev": true
         },
         "production": {
           "buildTarget": "shell:build:production",
-          "dev": false,
-          "envFile": ".env.production"
-        },
-        "stage": {
-          "buildTarget": "shell:build:stage",
-          "dev": false,
-          "envFile": ".env.stage"
+          "dev": false
         }
+      }
+    },
+    "build:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx build shell"],
+        "parallel": false,
+        "envFile": "apps/shell/.env.production"
+      }
+    },
+    "build:stage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx build shell"],
+        "parallel": false,
+        "envFile": "apps/shell/.env.stage"
       }
     },
     "export": {

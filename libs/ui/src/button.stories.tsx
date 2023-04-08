@@ -10,5 +10,5 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-  render: () => <Button onClick={() => console.log("111")}>hello</Button>,
+  render: () => <Button>hello</Button>,
 };

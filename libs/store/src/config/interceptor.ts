@@ -1,5 +1,3 @@
-import "./environment";
-
 export const base_url_client = process.env.REACT_APP_API_BASE_URL;
 export const base_url_server = process.env.API_BASE_URL;
 // Your tokens
@@ -15,15 +13,12 @@ export async function makeRequest(url: any, options?: any) {
       throw new Error(`Refresh token error! status: ${refreshResponse.status}`);
     }
     const data = await refreshResponse.json();
-    console.log("🚀  file: interceptor.ts:14  makeRequest  data:", data);
 
     // return makeRequest(url, options);
   }
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-
-  console.log("🎯 #21-libs/store/src/config/interceptor.ts", headers);
 
   return response;
 }

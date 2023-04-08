@@ -81,7 +81,7 @@
       "executor": "@nrwl/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/docs",
+        "outputDir": "dist/docs",
         "configDir": "apps/docs/.storybook"
       },
       "configurations": {

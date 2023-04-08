@@ -1,4 +1,6 @@
-import { makeRequest } from "@frame/store";
+import { makeRequest, mode } from "@frame/store";
+
+const { base_url } = mode();
 
 async function getData() {
   const res = await makeRequest(process.env.API_BASE_URL, { cache: "force-cache" });
@@ -11,7 +13,6 @@ async function getData() {
 
 export default async function Page() {
   const data = await getData();
-  console.log("🎯 #20-apps/shell/app/page.tsx", process.env.API_BASE_URL);
 
   return <div>{data[0].title}</div>;
 }
