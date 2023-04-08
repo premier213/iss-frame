@@ -1,6 +1,4 @@
-import { makeRequest, mode } from "@frame/store";
-
-const { base_url } = mode();
+import { makeRequest } from "@frame/store";
 
 async function getData() {
   const res = await makeRequest(process.env.API_BASE_URL, { cache: "force-cache" });
