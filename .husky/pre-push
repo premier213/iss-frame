@@ -4,5 +4,5 @@
 echo "🛠 run tests..."
 nx run-many --target=test
 echo "✅ tests passed."
-yarn release
+nx run-many --target=version
 git push --tags
