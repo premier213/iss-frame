@@ -2,7 +2,7 @@ import { Button } from "@mantine/core";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Button> = {
-  title: "Shared/Button",
+  title: "ui/Button",
   component: Button,
 };
 
