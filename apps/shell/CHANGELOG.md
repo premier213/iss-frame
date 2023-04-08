@@ -2,16 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.1.7](///compare/shell@0.1.6...shell@0.1.7) (2023-04-08)
+## [0.1.2](///compare/shell@0.1.1...shell@0.1.2) (2023-04-08)
 
 ### Dependency Updates
 
-- `store` updated to version `0.1.1`
-- `ui` updated to version `0.0.3`
+- `store` updated to version `0.1.0`
+- `ui` updated to version `0.0.1`
 
-## [0.1.7](///compare/shell@0.1.6...shell@0.1.7) (2023-04-08)
+### Bug Fixes
 
-### Dependency Updates
-
-- `store` updated to version `0.1.1`
-- `ui` updated to version `0.0.2`
+- name of shell d8718a1
