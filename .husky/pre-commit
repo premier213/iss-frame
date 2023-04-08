@@ -2,11 +2,11 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo "🛠 formating..."
-npx nx format:write
+nx format:write
 echo "✅ format done."
 echo "🛠 linting..."
-npx nx run-many --all --target=lint --fix
+nx run-many --target=lint --fix
 echo "🛠 check typescript types ..."
-npx nx run-many --all --target=type-check
+npx nx run-many --target=type-check
 echo "✅ types checked."
 git add -u

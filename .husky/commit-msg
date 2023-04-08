@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "💡 Refrence for commit message:"
-echo "🔑 use 'yarn commit' for prompt commitizen"
 npx --no -- commitlint --edit "$1"
