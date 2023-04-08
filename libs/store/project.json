@@ -33,6 +33,14 @@
       "options": {
         "commands": ["tsc -p libs/store/tsconfig.lib.json --noEmit", "tsc -p libs/store/tsconfig.spec.json --noEmit"]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "baseBranch": "main",
+        "preset": "conventional",
+        "tagPrefix": "${projectName}@"
+      }
     }
   }
 }

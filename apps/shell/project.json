@@ -93,8 +93,7 @@
       "options": {
         "baseBranch": "main",
         "preset": "conventional",
-        "tagPrefix": "${projectName}@",
-        "trackDeps": true
+        "tagPrefix": "${projectName}@"
       }
     }
   },
