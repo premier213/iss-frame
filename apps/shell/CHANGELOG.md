@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.3](///compare/shell@0.1.2...shell@0.1.3) (2023-04-08)
+
 ## [0.1.2](///compare/shell@0.1.1...shell@0.1.2) (2023-04-08)
 
 ### Bug Fixes
