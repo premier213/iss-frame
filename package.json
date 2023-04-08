@@ -7,7 +7,8 @@
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider && nx serve shell",
     "serve": "export NODE_OPTIONS=--openssl-legacy-provider && nx serve shell --prod",
     "build:stage": "export NODE_OPTIONS=--openssl-legacy-provider && nx build:stage shell --skip-nx-cache",
-    "build:prod": "export NODE_OPTIONS=--openssl-legacy-provider && nx build:prod shell --skip-nx-cache"
+    "build:prod": "export NODE_OPTIONS=--openssl-legacy-provider && nx build:prod shell --skip-nx-cache",
+    "release": "export NODE_OPTIONS=--openssl-legacy-provider && nx run-many --target=version"
   },
   "private": true,
   "dependencies": {
